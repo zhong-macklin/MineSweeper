@@ -8,6 +8,7 @@ Name|Role|Email|Phone
 Luis Martinez|Developer|lmartinez.sf@gmail.com|415-424-6191
 Vivian Eng|Developer|viviankareneng@gmail.com|415-845-9711
 Rassel Rejano|Developer|rasselrejano@gmail.com|415-286-4894
+Macklin Zhong|Tester|macklinz123@gmail.com|415-202-4324
 
 ---
 AP Computer Science<br>
