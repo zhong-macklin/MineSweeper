@@ -10,7 +10,7 @@ public class Square {
 	private int nearMines;
 	
 	
-	//ACCESSOR METHODS
+	//ACCESSOR & MUTATOR METHODS
 	public void setIsRevealed(boolean r) {
 		isRevealed = r;
 	}

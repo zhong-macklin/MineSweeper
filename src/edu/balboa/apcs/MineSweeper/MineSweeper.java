@@ -2,7 +2,7 @@ package edu.balboa.apcs.MineSweeper;
 
 /**
  * This class is the driver for the APCS MineSweeper app.
- * @author team X
+ * @author team P
  */
 public class MineSweeper {
 
