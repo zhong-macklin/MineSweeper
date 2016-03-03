@@ -1,71 +1,89 @@
 package edu.balboa.apcs.MineSweeper;
 
+
+
 //import MineSweeper;
 
 import java.util.Scanner;
 
-import javax.imageio.IIOException;
+
 
 /**
- * This class is the driver for the APCS MineSweeper app.
- * @author team P
+ * Tcounts class is the driver for the APCS MineSweeper app.
+ * 
+ * @author team X
  */
 public class MineSweeper {
-	static String[][] count;
+	static char[][] count;
 	final static double percent = 0.16;
-	
+	static char[] s3 = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+			'l', 'm', 'n', 'o' };
+
 	public MineSweeper(String s) {
 		s = s.toLowerCase().trim();
-		if(s.equals("easy")) {
-		count = new String[8][8];
+		if (s.equals("easy")) {
+			count = new char[8][8];
 		} else if (s.equals("medium")) {
-			count = new String[12][12];
-		} else  if (s == "hard") {
-			count = new String[15][15];
-		} else { 
+			count = new char[12][12];
+		} else if (s.equals("hard")) {
+			count = new char[15][15];
+		} else {
 			System.out.println("Please choose from + \n +"
-					+ "Easy , Medium , Hard ") ;
-				
-			}
-		}
-	
-	public static void grid() {
-		
-		for(int x = 0; x < count.length; x++) {
-//			if(x % 2 == 0) {
-//			System.out.print( "+ ");
-//			} else {
-//				System.out.println( " | ");
-//
-//			}
-			for(int y = 1; y<count[0].length; y= y + 2) {
-				if(x %2 == 0) {
-				System.out.print("+ --- ");
-				} else {
-					System.out.print( "|   |");
-				}
-					
-			}
-		}
-		//System.out.println(count);
+					+ "Easy , Medium , Hard ");
 
+		}
 	}
+
+	public static void grid() {
+
+		String s1 = "";
+		String s2 = "";
+		System.out.print(" ");
+		for (int i = 0; i < count.length; i++) {
+			System.out.print("   " + s3[i]);
+			s1 += "+---";
+			if (i == count.length - 1) {
+				s1 += "+";
+			}
+		}
+		for (int i = 0; i < count.length; i++) {
+			s2 += "|   ";
+			if (i == count.length - 1) {
+				s2 += "|";
+			}
+		}
+		for (int i = 1; i < count.length + 1; i++) {
+			if (i < 10) {
+				System.out.println("\n " + " " + s1);
+				System.out.print(i + " " + s2);
+				if (i == count.length) {
+					System.out.println("\n" + "  " + s1);
+				}
+			} else {
+				System.out.println("\n " + " " + s1);
+				System.out.print(i + s2);
+				if (i == count.length) {
+					System.out.println("\n" + "  " + s1);
+				}
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
-		System.out.println("Please choose a difficulty: ");
+    	System.out.println("Please choose a difficulty: ");
 		Scanner abc = new Scanner(System.in);
 		String n = abc.nextLine();
-		MineSweeper hello = new MineSweeper(n);
-		
-		
-		System.out.println(count);
+
+
+
 		grid();
-		// uncomment if your team decides to use the provided 
-		// console-like UI class instead of running MineSweeper 
+		// uncomment if your team decides to use the provided
+		// console-like UI class instead of running MineSweeper
 		// at the command line (in a terminal shell):
 		//
-		//MineSweeperConsole.main(null);
-		
+		// MineSweeperConsole.main(null);
+
 	}
 
 }
