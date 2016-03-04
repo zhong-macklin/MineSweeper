@@ -4,8 +4,8 @@ User Manual for Team P's MineSweeper
 ## Getting the application
 1. Open terminal shell.
 2. Change directory to workspace3 ( cd ~/MOUNTED/apcs-locker/workspace3 )
-3. Navigate the repository URL on github and copy the link
-4. On terminal shell, type in the command: "git clone URL". Replace URL with link copied on step 3. Hit enter.
+3. Navigate the project's repository URL on github and copy the link
+4. On terminal shell, type in the command: "git clone URL". Replace URL with link copied in step 3. Hit enter.
 5. On eclipse, create a project and name it based on the repository that you copied.
 6. Refresh the newly created project.
 
@@ -24,7 +24,7 @@ Here's a sample ordered list you might modify to suit your needs:
 ### Objective
 The objectives of the game are to mark all mines with flags and flip all the squares on the grid without flipping any squares with mines. 
 ### Controlling the game
-The game is based on rows and columns, where rows are represented by numbers and columns are represented by letters. To interact with the game, the user must input a letter inspect(i), flag(f), unflag(u), quit(q), followed by a set of coordinates. The coordinates are in the format (letter,number).
+The game is based on rows and columns, where rows are represented by numbers and columns are represented by letters. To interact with the game, the user must input a letter i(inspect), f(flag), u(unflag), q(quit). Letters i,f, and u must be followed by a set of coordinates in the format (letter,number). An example of interacting with the game would be the command "i b5". This prompts the application to inspect the square that corresponds with the coordinate "b5".
 
 *Describe how the user actually plays the game.  **Strongly** consider including screenshots by adding an image file to the `images` subfolder and referring to it as in the example below.  Remember to `git add/commit/push` the image files!*
 
