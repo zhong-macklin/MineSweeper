@@ -24,7 +24,7 @@ Here's a sample ordered list you might modify to suit your needs:
 ### Objective
 The objectives of the game are to mark all mines with flags and flip all the squares on the grid without flipping any squares with mines. 
 ### Controlling the game
-Insert text here...
+The game is based on rows and columns, where rows are represented by numbers and columns are represented by letters. To interact with the game, the user must input a letter inspect(i), flag(f), unflag(u), quit(q), followed by a set of coordinates. The coordinates are in the format (letter,number).
 
 *Describe how the user actually plays the game.  **Strongly** consider including screenshots by adding an image file to the `images` subfolder and referring to it as in the example below.  Remember to `git add/commit/push` the image files!*
 
