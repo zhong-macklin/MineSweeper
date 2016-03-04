@@ -1,16 +1,16 @@
 package edu.balboa.apcs.MineSweeper;
 public class Square {
+
+	private boolean isRevealed = false;
 	
-	private boolean isRevealed;
+	private boolean isFlagged = false;
 	
-	private boolean isFlagged;
-	
-	private boolean isMined;
+	private boolean isMined = false;
 	
 	private int nearMines;
 	
 	
-	//ACCESSOR METHODS
+	//ACCESSOR & MUTATOR METHODS
 	public void setIsRevealed(boolean r) {
 		isRevealed = r;
 	}

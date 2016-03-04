@@ -1,4 +1,4 @@
-User Manual for Team X's MineSweeper
+User Manual for Team P's MineSweeper
 ===
 
 ## Getting the application
