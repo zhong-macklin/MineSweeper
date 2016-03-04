@@ -17,7 +17,6 @@ Here's a sample ordered list you might modify to suit your needs:
 
 ## Playing the Game
 ### Objective
-Insert text here...
 The objectives of the game are to mark all mines with flags and flip all the squares on the grid without flipping any squares with mines. 
 ### Controlling the game
 Insert text here...
