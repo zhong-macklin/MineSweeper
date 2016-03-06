@@ -71,11 +71,10 @@ public class MineSweeper {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
-    	System.out.println("Please choose a difficulty: ");
+    		System.out.println("Please choose a difficulty: ");
 		Scanner abc = new Scanner(System.in);
-		String n = abc.nextLine();
-
-
+		String n = abc.nextLine();	
+		MineSweeper m1 = new MineSweeper(n);
 
 		grid();
 		// uncomment if your team decides to use the provided
