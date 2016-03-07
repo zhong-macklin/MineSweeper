@@ -13,13 +13,16 @@ import java.util.Scanner;
  * 
  * @author team X
  */
-public class MineSweeper {
+package edu.balboa.apcs.MineSweeper;
+
+import java.util.Scanner;
+
+public class MakeBoard {
+	final static String alph = "abcdefghijklmnop";
 	static char[][] count;
 	final static double percent = 0.16;
-	static char[] s3 = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-			'l', 'm', 'n', 'o' };
 
-	public MineSweeper(String s) {
+	public MakeBoard(String s) {
 		s = s.toLowerCase().trim();
 		if (s.equals("easy")) {
 			count = new char[8][8];
@@ -30,53 +33,64 @@ public class MineSweeper {
 		} else {
 			System.out.println("Please choose from + \n +"
 					+ "Easy , Medium , Hard ");
-
 		}
 	}
-
 	public static void grid() {
 
-		String s1 = "";
-		String s2 = "";
-		System.out.print(" ");
-		for (int i = 0; i < count.length; i++) {
-			System.out.print("   " + s3[i]);
-			s1 += "+---";
-			if (i == count.length - 1) {
-				s1 += "+";
+		for (int y = 0; y < count[0].length; y++) {
+			if (y == 0) {
+				System.out.print("     ");
 			}
+			System.out.print(alph.charAt(y) + "   ");
 		}
-		for (int i = 0; i < count.length; i++) {
-			s2 += "|   ";
-			if (i == count.length - 1) {
-				s2 += "|";
-			}
-		}
-		for (int i = 1; i < count.length + 1; i++) {
-			if (i < 10) {
-				System.out.println("\n " + " " + s1);
-				System.out.print(i + " " + s2);
-				if (i == count.length) {
-					System.out.println("\n" + "  " + s1);
-				}
+
+		for (int r = 0; r < count.length; r++) {
+
+			if (r == 0) {
 			} else {
-				System.out.println("\n " + " " + s1);
-				System.out.print(i + s2);
-				if (i == count.length) {
-					System.out.println("\n" + "  " + s1);
+				System.out.print(" |   ");
+			}
+			if (r < 10) {
+				System.out.print("\n" + "   +");
+			} else {
+				System.out.print("\n" + "   +");
+			}
+
+			for (int col = 0; col < count.length; col++) {
+				System.out.print("---+");
+			}
+
+			System.out.println(" ");
+			for (int col = 0; col < count.length; col++) {
+				// Prints out the number column and the vertical dividers
+				if (col == 0)
+					System.out.printf("%2d", r + 1);
+				if (col == count.length - 1 && r == count.length - 1) {
+					// Takes care of the last H.divider on the last row
+					System.out.print(" |  ");
 				}
+				System.out.print(" |  ");
 			}
 		}
+		System.out.print("\n" + "   ");
+		for (int row = 0; row < count.length; row++) {
+			// The final row of dividers that seems to not cooperate is held
+			// here.
+
+			System.out.print("+---");
+		}
+		System.out.print("+");
+
 	}
+
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
-    		System.out.println("Please choose a difficulty: ");
+		System.out.println("Please choose a difficulty: ");
 		Scanner abc = new Scanner(System.in);
-		String n = abc.nextLine();	
-		MineSweeper m1 = new MineSweeper(n);
-
-		grid();
+		String n = abc.nextLine();
+		makeBoard hello = new makeBoard(n);
+		hello.grid();
 		// uncomment if your team decides to use the provided
 		// console-like UI class instead of running MineSweeper
 		// at the command line (in a terminal shell):
@@ -84,5 +98,7 @@ public class MineSweeper {
 		// MineSweeperConsole.main(null);
 
 	}
-
 }
+
+
+
