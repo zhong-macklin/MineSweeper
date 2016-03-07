@@ -1,4 +1,3 @@
-package edu.balboa.apcs.MineSweeper;
 
 
 
@@ -15,7 +14,7 @@ import java.util.Scanner;
  */
 package edu.balboa.apcs.MineSweeper;
 
-import java.util.Scanner;
+
 
 public class MakeBoard {
 	final static String alph = "abcdefghijklmnop";
