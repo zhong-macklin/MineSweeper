@@ -60,14 +60,49 @@ public class MineField {
 		return (int)(numberOfRows*numberOfRows*PERCENT_METHOD);
 	}
 	
-	public Square getSquareAt(int x, int y) {
-		return board[x][y];
+	public Square getSquareAt(int y, int x) {
+		return board[y][x];
 	}
 	
+	
 	//inspect method
-	public void inspect(int x, int y) {
-		if (board[x][y].getIsMined()) {
+	public void inspect(int y, int x) {
+		int numMines = 0;
+		
+		if (board[y][x].getIsMined() || x < 0 || x > board.length - 1 || y < 0 || y > board.length - 1) {
+			return;
+		}
+		
+		if (!board[y][x].getIsRevealed() && !board[y][x].getIsFlagged()) {
+		
+			for (int row = y-1; row <= y+1; row++) {
+				for(int col = x-1; col <= x+1; col++) {
+					if (row < 0 || col < 0 || row > board.length - 1 || col > board.length - 1) {
+					
+					} else if (board[row][col].getIsMined()) {
+						numMines++;
+					}
+				}
+			}
 			
+		
+			board[y][x].setNearMines(numMines);
+			board[y][x].setIsRevealed(true);
+		
+		
+			if (numMines == 0) {
+				for (int row = y-1; row <= y+1; row++) {
+					for(int col = x-1; col <= x+1; col++) {
+						if (row < 0 || col < 0 || row > board.length - 1 || col > board.length - 1 ) {
+							
+						}  else if (col == x && row == y) {
+						
+						} else {
+							inspect(row, col);
+						}
+					}
+				}
+			}
 		}
 	}
 	
