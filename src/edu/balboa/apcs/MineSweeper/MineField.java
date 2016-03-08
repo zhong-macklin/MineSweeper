@@ -2,9 +2,9 @@ package edu.balboa.apcs.MineSweeper;
 import java.util.Random;
 
 public class MineField {
-	Square[][] board;
-	final static double PERCENT_METHOD = 0.16;
-	int numberOfRows;
+	private Square[][] board;
+	private final static double PERCENT_METHOD = 0.16;
+	private int numberOfRows;
 	
 	//constructor that creates a board
 	/*public void createBoard() {
