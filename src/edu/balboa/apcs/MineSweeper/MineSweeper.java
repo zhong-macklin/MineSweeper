@@ -53,6 +53,42 @@ public class MineSweeper {
 		}
 	}
 	
+		public void doCommand() {
+		
+		
+		
+		
+		}
+			public void play(String user) {
+			// Loop until game over/quit
+			String user = i b3, f e1, u c8, q ;
+		
+		    // Dispatch on command
+		    switch (user) {
+		    	case "i b3":
+		    	doCommand();
+		        break;
+		        case "f el":
+		        doCommand();
+		        break;
+		        case "u c8":
+		        doCommand();
+		        break;
+		        case "q":
+		        doCommand();
+		        break;
+		        default:
+		        System.out.println("Unknown command, input a command again.");
+		    	}
+		    		// Redraw the board and print out some messages
+		    		//board.draw();
+		    		if (win) {
+		    			System.out.println("Congratulations your a winner! You found all the mines!");
+		            	}
+		            		else if (!q) {
+		            			System.out.println("Bad luck, you stepped on a mine! :( ");
+		            		}
+	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
