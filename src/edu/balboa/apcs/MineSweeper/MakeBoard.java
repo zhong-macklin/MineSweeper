@@ -2,21 +2,21 @@ package edu.balboa.apcs.MineSweeper;
 
 
 public class MakeBoard {
+	
 	final static String alph = "abcdefghijklmnop";
-	static char[][] count;
 	final static double percent = 0.16;
 
 	
-	public static void grid(char i, char t, int q) {
+	public static void grid(Square[][] board) {
 
-		for (int y = 0; y < count[0].length; y++) {
+		for (int y = 0; y < board[0].length; y++) {
 			if (y == 0) {
 				System.out.print("     ");
 			}
 			System.out.print(alph.charAt(y) + "   ");
 		}
 
-		for (int r = 0; r < count.length; r++) {
+		for (int r = 0; r < board.length; r++) {
 
 			if (r == 0) {
 			} else {
@@ -28,16 +28,16 @@ public class MakeBoard {
 				System.out.print("\n" + "   +");
 			}
 
-			for (int col = 0; col < count.length; col++) {
+			for (int col = 0; col < board.length; col++) {
 				System.out.print("---+");
 			}
 
 			System.out.println(" ");
-			for (int col = 0; col < count.length; col++) {
+			for (int col = 0; col < board.length; col++) {
 				// Prints out the number column and the vertical dividers
 				if (col == 0)
 					System.out.printf("%2d", r + 1);
-				if (col == count.length - 1 && r == count.length - 1) {
+				if (col == board.length - 1 && r == board.length - 1) {
 					// Takes care of the last H.divider on the last row
 					System.out.print(" |  ");
 				}
@@ -45,7 +45,7 @@ public class MakeBoard {
 			}
 		}
 		System.out.print("\n" + "   ");
-		for (int row = 0; row < count.length; row++) {
+		for (int row = 0; row < board.length; row++) {
 			// The final row of dividers that seems to not cooperate is held
 			// here.
 
@@ -55,22 +55,31 @@ public class MakeBoard {
 
 	}
 
-	public String toString(char i, char t, int q) {
+	public String toString(char i, char t, int q, Square[][] board) {
 		String out = " ";
-	for (int y = 0; y < count[0].length; y++) {
+	for (int y = 0; y < board[0].length; y++) {
 			if (y == 0) {
 				out += ("     ");
 			}
 			out+=(alph.charAt(y) + "   ");
 		}
 
-		for (int r = 0; r < count.length; r++) {
+		for (int r = 0; r < board.length; r++) {
 
 			if (r == 0) {
 				
-			} else if (r == q && t == alph.charAt(r)){
-				out+= (" | "+i+" ");
-			} else {
+			} 
+			if (!(board[t][q].getIsRevealed())){
+				out+= (" | "+board[t][q].getNearMines()+" ");
+			}
+			if (!(board[t][q].getIsFlagged())&& !(board[t][q].getIsRevealed())) { 
+				board[t][q].getIsFlagged();
+				out+= (" | f ");
+			} 
+			if (board[t][q].getIsMined()) { 
+				out+= (" | m ");
+			}
+			else {
 				out+= (" |   ");
 			}
 			if (r < 10) {
@@ -79,16 +88,16 @@ public class MakeBoard {
 				out+=("\n" + "   +");
 			}
 
-			for (int col = 0; col < count.length; col++) {
+			for (int col = 0; col < board.length; col++) {
 				out+=("---+");
 			}
 
 			out+=(" ");
-			for (int col = 0; col < count.length; col++) {
+			for (int col = 0; col < board.length; col++) {
 				// Prints out the number column and the vertical dividers
 				if (col == 0)
 					out+= System.out.printf("%2d", r + 1);
-				if (col == count.length - 1 && r == count.length - 1) {
+				if (col == board.length - 1 && r == board.length - 1) {
 					// Takes care of the last H.divider on the last row
 					out+=(" |  ");
 				}
@@ -96,7 +105,7 @@ public class MakeBoard {
 			}
 		}
 		out+=("\n" + "   ");
-		for (int row = 0; row < count.length; row++) {
+		for (int row = 0; row < board.length; row++) {
 			// The final row of dividers that seems to not cooperate is held
 			// here.
 

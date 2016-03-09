@@ -33,7 +33,7 @@ public class Scoreboard {
 		}
 	}
 	
-	public toStiring() {
+	public toString() {
 		
 		}
 	}
