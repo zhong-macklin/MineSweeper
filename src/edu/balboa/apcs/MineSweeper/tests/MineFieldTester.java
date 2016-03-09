@@ -94,8 +94,27 @@ public class MineFieldTester {
 		}
 		// END TEST 6
 		
-
-	
+		
+		System.out.println("Testing the inspect method");
+		
+		MineField test = new MineField(5);
+		for(int row = 0; row < 5; row++) {
+			for(int col = 0; col < 5; col++) {
+				test.getMineField()[row][col] = new Square();
+			}
+		}
+		test.getMineField()[0][0].setIsMined(true);
+		test.getMineField()[0][1].setIsMined(true);
+		test.getMineField()[0][2].setIsMined(true);
+		test.getMineField()[1][0].setIsMined(true);
+		test.getMineField()[1][2].setIsMined(true);
+		test.getMineField()[2][0].setIsMined(true);	
+		test.getMineField()[2][1].setIsMined(true);	
+		test.getMineField()[2][2].setIsMined(true);	
+		test.inspect(1,1);
+		System.out.println("Expecting the method to set nearMines to: 8.\nActually set it to: + test.getMineField()[1][1].getNearMines()");
+		
+			
 	}
 
 }
