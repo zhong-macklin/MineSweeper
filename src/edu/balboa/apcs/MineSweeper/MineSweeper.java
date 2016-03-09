@@ -22,6 +22,14 @@ public class MineSweeper {
 	final static String alph = "abcdefghijklmnop";
 	static Square[][] count;
 	MineField m1;
+	char type;
+	int x;
+	int y;
+	
+	static boolean lose = false;
+	static boolean win = true;
+	static int numberWin = 0;
+	static int numberLose = 0;
 
 	public MineSweeper(String s) {
 		s = s.toLowerCase().trim();
@@ -35,8 +43,8 @@ public class MineSweeper {
 			count = new Square[15][15];
 			m1 = new MineField(15);
 		} else {
-			System.out.println("Please choose from + \n +"
-					+ "Beginner , Intermediate , Advanced ");
+			System.out.println("Please choose from + \n +" 
+		+ "Beginner , Intermediate , Advanced ");
 		}
 	}
 	
@@ -53,44 +61,21 @@ public class MineSweeper {
 		} else if(a.charAt(0) == 'q') {
 			System.out.println("You have quit the game.");
 		}
-		}
-	
-		public void doCommand() {
-		
-		
-		
-		
-		}
-	public void play(String user) {
-			// Loop until game over/quit
-			String user = i b3, f e1, u c8, q ;
-		
-		    // Dispatch on command
-		    switch (user) {
-		    	case "i b3":
-		    	doCommand();
-		        break;
-		        case "f el":
-		        doCommand();
-		        break;
-		        case "u c8":
-		        doCommand();
-		        break;
-		        case "q":
-		        doCommand();
-		        break;
-		        default:
-		        System.out.println("Unknown command, input a command again.");
-		    	}
-		    		// Redraw the board and print out some messages
-		    		//board.draw();
-		    		if (win) {
-		    			System.out.println("Congratulations your a winner! You found all the mines!");
-		            	}
-		            		else if (!q) {
-		            			System.out.println("Bad luck, you stepped on a mine! :( ");
-		            		}
 	}
+	
+		
+		public void parseCommand(String command) {
+			type = '0';
+			x = -1;
+			y = -1;
+			
+			for(int i = 0; i < command.length();i++) {
+				char ch = command.charAt(i);
+				
+				
+			}
+			
+		}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
