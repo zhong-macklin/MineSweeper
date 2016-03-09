@@ -25,18 +25,18 @@ public class MineSweeper {
 
 	public MineSweeper(String s) {
 		s = s.toLowerCase().trim();
-		if (s.equals("easy")) {
+		if (s.equals("beginner")) {
 			count = new Square[8][8];
 			m1 = new MineField(8);
-		} else if (s.equals("medium")) {
+		} else if (s.equals("intermediate")) {
 			count = new Square[12][12];
 			m1 = new MineField(12);
-		} else if (s.equals("hard")) {
+		} else if (s.equals("advanced")) {
 			count = new Square[15][15];
 			m1 = new MineField(15);
 		} else {
 			System.out.println("Please choose from + \n +"
-					+ "Easy , Medium , Hard ");
+					+ "Beginner , Intermediate , Advanced ");
 		}
 	}
 	
