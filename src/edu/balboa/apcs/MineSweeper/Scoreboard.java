@@ -1,40 +1,52 @@
 package edu.balboa.apcs.MineSweeper;
 
 public class Scoreboard {
-	/*booleans # of wins & losses
-	 * methodsadd win, add loss
-	 * -control class :need variable to know all squars that have 
-	 * no mines(if all clicked = win)
-	 * square has mine & clicked = loss
-	 * until game ends/quit
-	 */
+	
 	
 	private int wins = 0;
 	private int losses = 0;
 	
+<<<<<<< HEAD
 	public void addWIns() {
-		if( ???) {
 			wins++;
 			
-		}
-	
-	public void getWins() {
-		return getWins;
+		
+=======
+	public void addWins() {
+			wins++;
+			
+>>>>>>> bb738509635c469dffdcdf7fa1b209db8b081de8
+	}
+	public int getWins() {
+		return wins;
 		
 	}
 	public void addLosses() {
-		if(???) {
 			losses++;
-		}
+<<<<<<< HEAD
 		
-	public void getLosses() {
-		return getLosses;
-		
-		}
+	}	
+	public int getLosses() {
+		return losses;
+			
 	}
 	
+<<<<<<< HEAD
 	public toString() {
+=======
+	public void toStiring() {
 		
-		}
+>>>>>>> 91bb44a25ed80a28df69c68f3b420d730c1a6143
+		
+=======
+	}
+	
+	public int getLosses() {
+		return losses;
+	}
+	
+	public String toString() {
+		return "Games won: " + wins + "\nGames lost: " + losses;
+>>>>>>> bb738509635c469dffdcdf7fa1b209db8b081de8
 	}
 }
