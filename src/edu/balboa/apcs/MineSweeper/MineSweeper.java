@@ -16,10 +16,11 @@ import java.util.Scanner;
 
 
 
+
 public class MineSweeper {
 	
 	final static String alph = "abcdefghijklmnop";
-	static char[][] count;
+	static Square[][] count;
 	MineField m1;
 
 	public MineSweeper(String s) {
@@ -42,13 +43,20 @@ public class MineSweeper {
 	public void playGame(String a) {
 		a = a.trim();
 		if(a.charAt(0) == 'i') {
-			m1.inspect(a.indexOf(1)+1, a.charAt(a.length-1));
+			m1.inspect(a.indexOf(1)+1, a.charAt(a.length()-1));
+			
 		} else if(a.charAt(0) == 'f') {
-			m1.getSquareAt(y, x)
-			m1.setIsFlagged(true);
+			
+			m1.getSquareAt(a.indexOf(1)+1, a.charAt(a.length()-1));
+			
+			m1.isFlagged = true;
 		} else if(a.charAt(0) == 'u') {
+			
+			
 			m1.setIsFlagged(false);
+			
 		} else if(a.charAt(0) == 'q') {
+			
 			System.out.println("You have quit the game.");
 		}
 	}
@@ -59,7 +67,7 @@ public class MineSweeper {
 		
 		
 		}
-			public void play(String user) {
+	public void play(String user) {
 			// Loop until game over/quit
 			String user = i b3, f e1, u c8, q ;
 		
