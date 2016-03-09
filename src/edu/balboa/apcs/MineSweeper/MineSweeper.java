@@ -40,26 +40,20 @@ public class MineSweeper {
 		}
 	}
 	
-	public void playGame(String a) {
+		public void playGame(String a) {
 		a = a.trim();
 		if(a.charAt(0) == 'i') {
-			m1.inspect(a.indexOf(1)+1, a.charAt(a.length()-1));
-			
+			m1.inspect(x, y);
 		} else if(a.charAt(0) == 'f') {
-			
-			m1.getSquareAt(a.indexOf(1)+1, a.charAt(a.length()-1));
-			
-			m1.isFlagged = true;
+			Square curSquare = m1.getSquareAt(x, y);
+			curSquare.setIsFlagged(true);
 		} else if(a.charAt(0) == 'u') {
-			
-			
-			m1.setIsFlagged(false);
-			
+			Square curSquare = m1.getSquareAt(x, y);
+			curSquare.setIsFlagged(false);
 		} else if(a.charAt(0) == 'q') {
-			
 			System.out.println("You have quit the game.");
 		}
-	}
+		}
 	
 		public void doCommand() {
 		
