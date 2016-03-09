@@ -13,6 +13,9 @@ public class MineField {
 	private int numberOfRows;
 	
 	//constructor that sets board and randomly places mines in Squares
+	public Square[][] getMineField() {
+		return board;
+	}
 	public MineField(int numRows) {
 		
 		numberOfRows = numRows;
