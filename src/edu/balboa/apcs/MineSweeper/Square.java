@@ -1,12 +1,16 @@
 package edu.balboa.apcs.MineSweeper;
 public class Square {
-
+	
+	//keeps track of whether the Square has been revealed
 	private boolean isRevealed = false;
 	
+	//keeps track of whether the Square has been flagged
 	private boolean isFlagged = false;
 	
+	//keeps track of whether or not the Square has a mine
 	private boolean isMined = false;
 	
+	//keeps track of the number of mines in the Squares around this Square
 	private int nearMines;
 	
 	

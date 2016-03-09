@@ -2,31 +2,17 @@ package edu.balboa.apcs.MineSweeper;
 import java.util.Random;
 
 public class MineField {
+	
+	//keeps track of the current game board
 	private Square[][] board;
+	
+	//represents the percent of Squares being mined (16%)
 	private final static double PERCENT_METHOD = 0.16;
+	
+	//keeps track of the number of rows/columns that the current game board has
 	private int numberOfRows;
 	
-	//constructor that creates a board
-	/*public void createBoard() {
-		for(int row =0;row<board.length; row++ ) {
-			for(int col = 0; col<board.length-1; col++) {
-				numRows += row;
-				numCol += col;
-				if(board[row][col]%4==0 ) {
-					System.out.println("+");
-				} else {
-					System.out.println("-");
-				}
-						
-			}
-		}
-		
-		char mine = '*';		
-		for(int mines = 0; mines<board.length; mines++) {
-			
-		}	
-	}*/
-	
+	//constructor that sets board and randomly places mines in Squares
 	public MineField(int numRows) {
 		
 		numberOfRows = numRows;
@@ -48,10 +34,12 @@ public class MineField {
 		}
 	}
 	
+	//accessor method for numberOfRows
 	public int getNumRows() {
 		return numberOfRows;
 	}
 	
+	//returns the total number of Squares in game board
 	public int getNumSquares() {
 		return numberOfRows * numberOfRows;
 	}
