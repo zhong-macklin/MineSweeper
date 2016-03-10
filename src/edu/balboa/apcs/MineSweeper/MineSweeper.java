@@ -16,11 +16,12 @@ import java.util.Scanner;
 
 
 public class MineSweeper {
-	private int win, loss;
-	final static String alph = "abcdefghijklmnop";
+	
+	
 	static Square[][] count; //keep in mind that we have (2) 2D arrays - count & board. we need to fix this.
-	MineField m1;
+	static MineField m1;
 	static int winCount;
+	char type;
 	int x;
 	int y;
 	static MakeBoard print;
@@ -130,16 +131,19 @@ public class MineSweeper {
 //		    	}
 		    		// Redraw the board and print out some messages
 		    		//board.draw();
-		    		if (winCount.equals(board.getNumSquares()- getNumMinedSquare())) {
+		    		/*if (winCount.equals(board.getNumSquares()- getNumMinedSquare())) {
 		    			System.out.println("Congratulations your a winner! You found all the mines!");
 		            	}
 		            		else if (!q) {
 		            			System.out.println("Bad luck, you stepped on a mine! :( ");
 		            		}
+	}*/
+	
+	public String toString() {
+		
 	}
-	public String toString() { //this will check whether we've won or not, based on the number we give to the win() method, and increment our Win or loss field    
-		if()
-	}
+		//this will check whether we've won or not, based on the number we give to the win() method, and increment our Win or loss field    
+	
 		public void parseCommand(String command) {
 		type = '0';
 		x = -1;
@@ -174,9 +178,11 @@ public class MineSweeper {
 			}
 		}
 		y--;
-	//	if(type == 'u'){
-			//try {
-			//not done yet
+		if(type == 'u'){
+			try {
+				Square curSquare = game.getSquare(y,x);
+			}
+			
 			
 		
 			
@@ -192,4 +198,5 @@ public class MineSweeper {
 		// MineSweeperConsole.main(null);
 
 	}
+
 }
