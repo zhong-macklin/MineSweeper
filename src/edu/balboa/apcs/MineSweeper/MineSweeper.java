@@ -85,7 +85,7 @@ public class MineSweeper {
 	}
 	
 	
-	public void playGame(MineField m) {
+	public static void playGame(MineField m) {
 			win = false;
 			lose = false;
 			
@@ -111,37 +111,6 @@ public class MineSweeper {
 			}
 			
 		}
-	
-	public void play(String user) {
-//			// Loop until game over/quit
-//			String user = i b3, f e1, u c8, q ;
-//		
-//		    // Dispatch on command
-//		    switch (user) {
-//		    	case "i b3":
-//		    	doCommand();
-//		        break;
-//		        case "f el":
-//		        doCommand();
-//		        break;
-//		        case "u c8":
-//		        doCommand();
-//		        break;
-//		        case "q":
-//		        doCommand();
-//		        break;
-//		        default:
-//		        System.out.println("Unknown command, input a command again.");
-//		    	}
-		    		// Redraw the board and print out some messages
-		    		//board.draw();
-		    		/*if (winCount.equals(board.getNumSquares()- getNumMinedSquare())) {
-		    			System.out.println("Congratulations your a winner! You found all the mines!");
-		            	}
-		            		else if (!q) {
-		            			System.out.println("Bad luck, you stepped on a mine! :( ");
-		            		}
-	}*/
 	
 	public String toString() {
 		
@@ -180,22 +149,23 @@ public class MineSweeper {
 				System.out.println("Invalid, please try again.");
 				return;
 			}
-		}
 		y--;
 		if(type == 'u'){
 			try {
-				Square curSquare = game.getSquare(y,x);
+				Square curSquare = m1.getSquare(y,x);
+			
+			} catch(Exception e) {
+				
 			}
-			
-			
+		}
 		
-			
-			}
+		}	
+		}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
-	beginGame();
-	playGame(m1);
+		beginGame();
+		playGame(m1);
 		
 		for(int i = 0; i <1;) {
 			System.out.println("Play again? Enter: Y for yes, Q for quit");
@@ -215,6 +185,6 @@ public class MineSweeper {
 		//
 		// MineSweeperConsole.main(null);
 
+		}
 	}
-
 }
