@@ -20,6 +20,7 @@ public class MineSweeper {
 	
 	static Square[][] count; //keep in mind that we have (2) 2D arrays - count & board. we need to fix this.
 	static MineField m1;
+	static MineSweeper MIneSweeper;
 	static int winCount;
 	char type;
 	int x;
@@ -85,7 +86,7 @@ public class MineSweeper {
 	}
 	
 	
-	public static void playGame(MineField m) {
+	public void playGame(MineField m) {
 			win = false;
 			lose = false;
 			
@@ -112,12 +113,10 @@ public class MineSweeper {
 			
 		}
 	
-	public String toString() {
-		
-	}
+	
 		//this will check whether we've won or not, based on the number we give to the win() method, and increment our Win or loss field    
 	
-		public void parseCommand(String command) {
+		public  void parseCommand(String command) {
 		type = '0';
 		x = -1;
 		y = -1;
@@ -152,20 +151,60 @@ public class MineSweeper {
 		y--;
 		if(type == 'u'){
 			try {
-				Square curSquare = m1.getSquare(y,x);
+				Square curSquare = m1.getSquareAt(y,x);
+				curSquare.setIsFlagged(true);
 			
 			} catch(Exception e) {
-				
+				System.out.println("Invalid, please try again.");
+				return;
 			}
+				 } else if (type == 'i') {
+
+				 //try {
+
+				 int cantWin = 0;
+
+				 if (m1.getSquareAt(y, x).getIsMined()) {
+
+				 lose = true;
+
+				 return;
+
+				 }
+
+				 m1.inspect(x, y);
+
+				for (Square[] t : m1.getBoard()) {
+
+					for (Square u : t) {
+
+						if (!u.getIsRevealed() && !u.getIsMined()) {
+
+						cantWin++;
+
+						}
+
+					}
+
+				 }
+
+				if (cantWin == 0) {
+
+				 win = true;
+
+				 return;
+				
+			 }
 		}
+	}
 		
-		}	
-		}
+			
+}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
 		beginGame();
-		playGame(m1);
+		MIneSweeper.playGame(m1);
 		
 		for(int i = 0; i <1;) {
 			System.out.println("Play again? Enter: Y for yes, Q for quit");
@@ -173,7 +212,7 @@ public class MineSweeper {
 			String userInput = keyboard3.nextLine();
 			if(userInput.equalsIgnoreCase("Y")) {
 				beginGame();
-				playGame(m1);
+				MIneSweeper.playGame(m1);
 			} else if(userInput.equalsIgnoreCase("Q")) {
 				return;
 			} else {
