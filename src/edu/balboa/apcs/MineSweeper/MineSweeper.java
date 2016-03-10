@@ -21,45 +21,92 @@ public class MineSweeper {
 	static Square[][] count; //keep in mind that we have (2) 2D arrays - count & board. we need to fix this.
 	MineField m1;
 	static int winCount;
+	int x;
+	int y;
+	static MakeBoard print;
+	static Scoreboard s;
+	static boolean win = false;
+	static boolean lose = false;
 
-	public MineSweeper(String s) {
-		s = s.toLowerCase().trim();
-		if (s.equals("beginner")) {
-			board = new Square[8][8];
-			m1 = new MineField(8);
-		} else if (s.equals("intermediate")) {
-			count = new Square[12][12];
-			m1 = new MineField(12);
-		} else if (s.equals("advanced")) {
-			count = new Square[15][15];
-			m1 = new MineField(15);
-		} else {
-			System.out.println("Please choose from + \n +"
-					+ "Beginner , Intermediate , Advanced ");
+	
+	public static void beginGame() {
+		
+		for(int i = 0; i < 1; ) {
+			System.out.println("Please choose a difficulty: beginner, intermediate, advanced ");
+			Scanner abc = new Scanner(System.in);
+			String n = abc.nextLine();
+			n = n.toLowerCase().trim();
+			if (n.equalsIgnoreCase("beginner")) {
+			
+				m1 = new MineField(8);
+				i++;
+			
+			} else if (n.equalsIgnoreCase("intermediate")) {
+			
+				m1 = new MineField(12);
+				i++;
+			
+			} else if (n.equalsIgnoreCase("advanced")) {
+		
+				m1 = new MineField(15);
+				i++;
+			
+			} else {
+				System.out.println("Invalid command.");
+			}
 		}
+		
+	for(int i = 0; i < 1; ) {
+		System.out.println("Please choose a difficulty: beginner, intermediate, advanced ");
+		Scanner abc = new Scanner(System.in);
+		String n = abc.nextLine();
+		n = n.toLowerCase().trim();
+		if (n.equalsIgnoreCase("beginner")) {
+		
+			m1 = new MineField(8);
+			i++;
+		
+		} else if (n.equalsIgnoreCase("intermediate")) {
+		
+			m1 = new MineField(12);
+			i++;
+		
+		} else if (n.equalsIgnoreCase("advanced")) {
+	
+			m1 = new MineField(15);
+			i++;
+		
+		} else {
+			System.out.println("Invalid command.");
+		}
+		
+	}
 	}
 	
-		public void playGame(String a) {
-		a = a.trim();
-		if(a.charAt(0) == 'i') {
-			m1.inspect(x, y);
-		} else if(a.charAt(0) == 'f') {
-			Square curSquare = m1.getSquareAt(x, y);
-			curSquare.setIsFlagged(true);
-		} else if(a.charAt(0) == 'u') {
-			Square curSquare = m1.getSquareAt(x, y);
-			curSquare.setIsFlagged(false);
-		} else if(a.charAt(0) == 'q') {
-			System.out.println("You have quit the game.");
-		}
+	
+	public void playGame(MineField m) {
+			win = false;
+			lose = false;
+			
+			for(int o = 0; o < 1;) {
+				MakeBoard.grid(m1);
+				System.out.println("Type in a command: i = inspect, f = flag, u = unflag, q = quit");
+				Scanner keyboard2 = new Scanner(System.in);
+				String command = keyboard2.nextLine();
+				parseCommand(command);
+				
+				if(win) {
+					System.out.println("You have won the game!");
+					s.addWins();
+				} else if(lose) {
+					System.out.println("You've lost.");
+					s.addLosses();
+				}
+				
+			}
+			
 		}
 	
-		public void doCommand() {
-		
-		
-		
-		
-		}
 	public void play(String user) {
 //			// Loop until game over/quit
 //			String user = i b3, f e1, u c8, q ;
@@ -137,10 +184,7 @@ public class MineSweeper {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
-		System.out.println("Please choose a difficulty: ");
-		Scanner abc = new Scanner(System.in);
-		String s = abc.nextLine();
-		MineSweeper hello = new MineSweeper(s);
+	beginGame();
 		// uncomment if your team decides to ue the provided
 		// console-like UI class instead of running MineSweeper
 		// at the command line (in a terminal shell):
