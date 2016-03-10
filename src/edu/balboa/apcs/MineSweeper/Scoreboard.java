@@ -12,29 +12,23 @@ public class Scoreboard {
 	private int wins = 0;
 	private int losses = 0;
 	
-	public void addWIns() {
-		if( ???) {
+	public void addWins() {
 			wins++;
 			
-		}
-	
-	public void getWins() {
-		return getWins;
+	}
+	public int getWins() {
+		return wins;
 		
 	}
 	public void addLosses() {
-		if(???) {
 			losses++;
-		}
-		
-	public void getLosses() {
-		return getLosses;
-		
-		}
 	}
 	
-	public toStiring() {
-		
-		}
+	public int getLosses() {
+		return losses;
+	}
+	
+	public String toString() {
+		return "Games won: " + wins + "\nGames lost: " + losses;
 	}
 }
