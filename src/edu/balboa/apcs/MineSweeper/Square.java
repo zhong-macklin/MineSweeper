@@ -44,18 +44,16 @@ public class Square {
 	}
 
 	public String toString() {
-		if(getIsRevealed() == true) {
-			return "O";
-		}
-		if(getIsFlagged() == true) {
-			return "U+2690";
-		}
-		if(getIsMined() == true) {
-			return "*";
-		}
-		if(getNearMines()>0) {
+		if (getIsRevealed() == true) {
 			return "" + nearMines;
 		}
+		if (getIsFlagged() == true) {
+			return "U+2690";
+		}
+		if (getIsMined() == true) {
+			return "*";
+		}
+
 		return " ";
 	}
 }
