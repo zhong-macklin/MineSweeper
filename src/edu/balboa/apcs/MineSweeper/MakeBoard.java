@@ -56,6 +56,7 @@ public class MakeBoard {
 
 	public String toString(char i, char t, int q, MineField m1) {
 		String out = " ";
+		//String 
 	for (int y = 0; y < m1.getBoard().length; y++) {
 			if (y == 0) {
 				out += ("     ");
@@ -117,8 +118,12 @@ public class MakeBoard {
 		Scanner b = new Scanner(System.in);
 		MakeBoard booard = new MakeBoard();
 		booard.grid(m1.getBoard());
+		String command = b.nextLine();
+		
 		
 	}
 	
 }
+
+
 
