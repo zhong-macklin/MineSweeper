@@ -93,6 +93,47 @@ public class MineSweeper {
 	public String toString() { //this will check whether we've won or not, based on the number we give to the win() method, and increment our Win or loss field    
 		if()
 	}
+		public void parseCommand(String command) {
+		type = '0';
+		x = -1;
+		y = -1;
+		
+		for(int i = 0; i < command.length(); i ++) {
+			char ch = command.charAt(i);
+			if (ch == ' ') {
+				
+			}else if( type == '0'){
+				type = ch;
+			System.out.println("type =" + ch);
+			}else if( x == -1) {
+				if(ch < 'a'|| ch >= 'z') {
+					System.out.println("Invalid, please try again.");
+					return;
+				}else{ 
+					x = command.charAt(i) - 'a';
+					System.out.println("x =" + x);
+				}
+			}else if(y== -1) {
+				if(ch <= '0' || ch >= '9'){
+					System.out.println("Invalid, please try again.");
+					return;
+				}else{
+					y = Character.getNumericValue(ch);
+					System.out.println("y =" + y);
+				}
+			}else {
+				System.out.println("Invalid, please try again.");
+				return;
+			}
+		}
+		y--;
+	//	if(type == 'u'){
+			//try {
+			//not done yet
+			
+		
+			
+			}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
