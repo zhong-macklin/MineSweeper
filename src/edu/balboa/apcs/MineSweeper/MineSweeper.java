@@ -99,9 +99,13 @@ public class MineSweeper {
 				if(win) {
 					System.out.println("You have won the game!");
 					s.addWins();
+					s.toString();
+					return;
 				} else if(lose) {
 					System.out.println("You've lost.");
 					s.addLosses();
+					s.toString();
+					return;
 				}
 				
 			}
@@ -191,6 +195,20 @@ public class MineSweeper {
 	public static void main(String[] args) {
 		System.out.println("Welcome to APCS MineSweeper.");
 	beginGame();
+	playGame(m1);
+		
+		for(int i = 0; i <1;) {
+			System.out.println("Play again? Enter: Y for yes, Q for quit");
+			Scanner keyboard3 = new Scanner(System.in);
+			String userInput = keyboard3.nextLine();
+			if(userInput.equalsIgnoreCase("Y")) {
+				beginGame();
+				playGame(m1);
+			} else if(userInput.equalsIgnoreCase("Q")) {
+				return;
+			} else {
+				System.out.println("Invalid command");
+			}
 		// uncomment if your team decides to ue the provided
 		// console-like UI class instead of running MineSweeper
 		// at the command line (in a terminal shell):
