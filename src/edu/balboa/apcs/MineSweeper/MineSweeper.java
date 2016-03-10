@@ -16,11 +16,11 @@ import java.util.Scanner;
 
 
 public class MineSweeper {
-	private int win, loss;
-	final static String alph = "abcdefghijklmnop";
+	
 	static Square[][] count; //keep in mind that we have (2) 2D arrays - count & board. we need to fix this.
 	MineField m1;
 	static int winCount;
+	char type;
 	int x;
 	int y;
 	static MakeBoard print;
