@@ -57,6 +57,10 @@ public class MineField {
 	public Square getSquareAt(int y, int x) {
 		return board[y][x];
 	}
+	
+	public Square[][] getBoard() {
+		return board;
+	}
 	//We will run this method to check if we've won
 	public int Win(Square[][] board) {
 		int unMined = 0;

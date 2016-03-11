@@ -47,10 +47,10 @@ public class Square {
 		if (getIsRevealed() == true) {
 			return "" + nearMines;
 		}
-		if (getIsFlagged() == true) {
-			return "U+2690";
+		else if (getIsFlagged() == true) {
+			return "\u2690";
 		}
-		if (getIsMined() == true) {
+		else if (getIsMined() == true) {
 			return "*";
 		}
 

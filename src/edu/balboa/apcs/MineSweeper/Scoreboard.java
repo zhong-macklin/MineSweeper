@@ -16,8 +16,7 @@ public class Scoreboard {
 		
 	}
 	public void addLosses() {
-	
-			losses++;
+		losses++;
 	}
 		
 	public int getLosses() {

@@ -8,14 +8,43 @@ public class MakeBoard {
 	
 	public static void grid(MineField m1) {
 
-		for (int y = 0; y < m1.getBoard().length; y++) {
+		for (int y = 0; y < m1.getNumRows(); y++) {
 			if (y == 0) {
 				System.out.print("     ");
 			}
 			System.out.print(alph.charAt(y) + "   ");
 		}
-
-		for (int r = 0; r < m1.getBoard().length; r++) {
+		
+		System.out.println();
+		
+		System.out.print("   +");
+		for (int col3 = 0; col3 < m1.getNumRows(); col3++) {
+			System.out.print("---+");
+		}
+		System.out.println();
+		for (int row = 0; row < m1.getNumRows(); row++) {
+			if (row < 9) {
+				System.out.print((row + 1) + "  |" );
+			} else {
+				System.out.print((row + 1) + " |" );
+			}
+			
+			for(int col = 0; col < m1.getNumRows(); col++) {
+				/*if (b.getTile(col, row).getIsMined()) {
+					System.out.print(" * ");
+				}*/
+				System.out.print(" " + m1.getSquareAt(row, col).toString() + " ");
+				System.out.print("|");
+			} 
+			System.out.println();
+			System.out.print("   +");
+			for (int col2 = 0; col2 < m1.getNumRows(); col2++) {
+				System.out.print("---+");
+			}
+			System.out.println();
+		}
+	
+		/*for (int r = 0; r < m1.getNumRows(); r++) {
 
 			if (r == 0) {
 			} else {
@@ -70,9 +99,9 @@ public class MakeBoard {
 				
 			} 
 			if (!(m1.getBoard()[t][q].getIsRevealed())){
-				out+= (" | "+m1.getBoard()[t][q].getNearMines()+" ");
+				out+= (" | "+ m1.getSquareAt(t, q).getNearMines() +" ");
 			}
-			if (!(m1.getBoard()[t][q].getIsFlagged())&& !(m1.getBoard()[t][q].getIsRevealed())) { 
+			if (!(m1.getSquareAt(t, q).getIsFlagged())&& !(m1.getSquareAt(t, q).getIsRevealed())) { 
 				m1.getBoard()[t][q].getIsFlagged();
 				out+= (" | f ");
 			} 
@@ -117,12 +146,12 @@ public class MakeBoard {
 	public static void main(String[] args) {
 		Scanner b = new Scanner(System.in);
 		MakeBoard booard = new MakeBoard();
-		booard.grid(m1.getBoard());
+		board.grid(m1.getBoard());
 		String command = b.nextLine();
 		
 		
+	}*/
 	}
-	
 }
 
 
