@@ -29,7 +29,7 @@ public class MineField {
 			}
 		}
 
-		for (int random = 0; random <= (int) (numRows * numRows * PERCENT_METHOD);) {
+		for (int random = 0; random < (int) (numRows * numRows * PERCENT_METHOD);) {
 			Square s = getSquareAt((int) (Math.random() * numRows),
 					(int) (Math.random() * numRows));
 			if (s.getIsMined() == false) {
