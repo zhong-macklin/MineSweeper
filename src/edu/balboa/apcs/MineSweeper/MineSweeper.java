@@ -34,7 +34,7 @@ public class MineSweeper {
 			if (n.equalsIgnoreCase("b")) {
 
 				m1 = new MineField(8);
-				//System.out.println("beginner minefield");
+				// System.out.println("beginner minefield");
 
 				i++;
 
@@ -60,7 +60,8 @@ public class MineSweeper {
 
 		for (int o = 0; o < 1;) {
 			MakeBoard.grid(m1);
-			System.out.println("\nType in a command: i to inspect, f to flag, u to unflag, or q to quit this game, and then coordinates.\nExample: i b3");
+			System.out.println(
+					"\nType in a command: i to inspect, f to flag, u to unflag, or q to quit this game, and then coordinates.\nExample: i b3");
 			Scanner keyboard2 = new Scanner(System.in);
 			String command = keyboard2.nextLine();
 			command.trim();
@@ -75,6 +76,18 @@ public class MineSweeper {
 				System.out.println(s.toString());
 				return;
 			} else if (lose) {
+
+				for (int i = 0; i < m1.getNumRows(); i++) {
+					for (int a = 0; a < m1.getNumRows(); a++) {
+						if (m1.getSquareAt(i, a).getIsMined()) {
+
+							m1.getSquareAt(i, a).setIsMined(true);
+							m1.getSquareAt(i, a).setIsRevealed(true);
+							m1.getSquareAt(i, a).toString();
+						}
+					}
+				}
+				MakeBoard.grid(m1);
 				System.out.println("You've lost.");
 				s.addLosses();
 				System.out.println(s.toString());
@@ -96,14 +109,14 @@ public class MineSweeper {
 
 			} else if (type == '0') {
 				type = ch;
-				//System.out.println("type =" + ch);
+				// System.out.println("type =" + ch);
 			} else if (x == -1) {
 				if (ch < 'a' || ch >= 'z') {
 					System.out.println("Invalid, please try again.");
 					return;
 				} else {
 					x = command.charAt(i) - 'a';
-					//System.out.println("x =" + x);
+					// System.out.println("x =" + x);
 				}
 			} else if (y == -1) {
 				if (ch <= '0' || ch >= '9') {
@@ -111,78 +124,77 @@ public class MineSweeper {
 					return;
 				} else {
 					y = Character.getNumericValue(ch);
-					//System.out.println("y =" + y);
+					// System.out.println("y =" + y);
 				}
 			} else if (y < 10 && y > -1) {
 				if (ch <= '0' || ch >= '9') {
 					System.out.println("Invalid, please try again.");
 					return;
 				} else {
-					y = 10*y + Character.getNumericValue(ch);
-					//System.out.println("y = " + y);
+					y = 10 * y + Character.getNumericValue(ch);
+					// System.out.println("y = " + y);
 				}
 			} else {
 				System.out.println("Invalid, please try again.");
 				return;
-			} 
-			
+			}
+
 		}
-		
+
 		y--;
-			
-			if (type == 'f') {
-				try {
-					Square curSquare = m1.getSquareAt(y, x);
-					curSquare.setIsFlagged(true);
 
-				} catch (Exception e) {
-					System.out.println("Invalid, please try again.");
-					return;
-				}
-			} else if (type == 'u') {
-				try {
-					Square curSquare = m1.getSquareAt(y, x);
-					curSquare.setIsFlagged(false);
-				} catch (Exception e) {
-					System.out.println("Invalid, please try again.");
-					return;
-				}
-			} else if (type == 'i') {
-				
-				int cantWin = 0;
+		if (type == 'f') {
+			try {
+				Square curSquare = m1.getSquareAt(y, x);
+				curSquare.setIsFlagged(true);
 
-				if (m1.getSquareAt(y, x).getIsMined()) {
+			} catch (Exception e) {
+				System.out.println("Invalid, please try again.");
+				return;
+			}
+		} else if (type == 'u') {
+			try {
+				Square curSquare = m1.getSquareAt(y, x);
+				curSquare.setIsFlagged(false);
+			} catch (Exception e) {
+				System.out.println("Invalid, please try again.");
+				return;
+			}
+		} else if (type == 'i') {
 
-					lose = true;
+			int cantWin = 0;
 
-					return;
+			if (m1.getSquareAt(y, x).getIsMined()) {
+				lose = true;
 
-				}
+				return;
 
-				m1.inspect(y, x);
+			}
 
-				for (Square[] t : m1.getBoard()) {
+			m1.inspect(y, x);
 
-					for (Square u : t) {
+			for (Square[] t : m1.getBoard()) {
 
-						if (!u.getIsRevealed() && !u.getIsMined()) {
+				for (Square u : t) {
 
-							cantWin++;
+					if (!u.getIsRevealed() && !u.getIsMined()) {
 
-						}
+						cantWin++;
 
 					}
 
 				}
 
-				if (cantWin == 0) {
-
-					win = true;
-
-					return;
-
-				}
 			}
+
+			if (cantWin == 0) {
+
+				win = true;
+
+				return;
+
+			}
+		}
 
 	}
 
@@ -190,10 +202,9 @@ public class MineSweeper {
 		MineSweeper s1 = new MineSweeper();
 		System.out.println("Welcome to APCS MineSweeper.");
 		s1.beginGame();
-		//System.out.println("begin game done");
+		// System.out.println("begin game done");
 		s1.playGame(m1);
-		//System.out.println("play game done");
-
+		// System.out.println("play game done");
 
 		for (int i = 0; i < 1;) {
 			System.out.println("\nPlay again? Enter: Y for yes, Q to quit this program");
