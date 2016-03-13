@@ -12,13 +12,11 @@ User Manual for Team P's MineSweeper
 ## Running the application
 *REPLACE THIS:* Describe how the user would compile (build) the downloaded application and how to start the app.  (You can assume the user has a suitable JDK installed on their system.)
 
-Here's a sample ordered list you might modify to suit your needs:
-
-1.  From a comand prompt (or terminal shell), `cd` to the directory where you cloned the `MineSweeper-2015-alpha` repository.
-2.  Step 2
-	1.  Step 2a
-	2.  Step 2b
-
+1.  From a command prompt (or terminal shell), `cd` to the directory where you cloned the `MineSweeperP` repository.
+2.  cd to 'src'
+3.  Compile the driver class by inputting command 'javac edu/balboa/apcs/MineSweeper/MineSweeper.java'. Hit enter.
+4.  Run the driver class by inputting command 'java edu.balboa.apcs.MineSweeper.MineSweeper'. Hit enter.
+5.  Play the game.
 
 ## Playing the Game
 ### Objective
