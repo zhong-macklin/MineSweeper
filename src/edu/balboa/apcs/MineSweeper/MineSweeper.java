@@ -112,7 +112,7 @@ public class MineSweeper {
 				// System.out.println("type =" + ch);
 			} else if (x == -1) {
 				if (ch < 'a' || ch >= 'z') {
-					System.out.println("Invalid, please try again. 1");
+					System.out.println("Invalid, please try again.");
 					return;
 				} else {
 					x = command.toLowerCase().charAt(i) - 'a';
@@ -120,7 +120,7 @@ public class MineSweeper {
 				}
 			} else if (y == -1) {
 				if (ch <= '0' || ch > '9') {
-					System.out.println("Invalid, please try again. 2");
+					System.out.println("Invalid, please try again.");
 					return;
 				} else {
 					y = Character.getNumericValue(ch);
@@ -128,14 +128,14 @@ public class MineSweeper {
 				}
 			} else if (y < 10 && y > -1) {
 				if (ch <= '0' || ch > '9') {
-					System.out.println("Invalid, please try again. 3");
+					System.out.println("Invalid, please try again.");
 					return;
 				} else {
 					y = 10 * y + Character.getNumericValue(ch);
 					// System.out.println("y = " + y);
 				}
 			} else {
-				System.out.println("Invalid, please try again. 4");
+				System.out.println("Invalid, please try again.");
 				return;
 			}
 
@@ -149,7 +149,7 @@ public class MineSweeper {
 				curSquare.setIsFlagged(true);
 
 			} catch (Exception e) {
-				System.out.println("Invalid, please try again. 5");
+				System.out.println("Invalid, please try again.");
 				return;
 			}
 		} else if (type == 'u') {
@@ -157,21 +157,29 @@ public class MineSweeper {
 				Square curSquare = m1.getSquareAt(y, x);
 				curSquare.setIsFlagged(false);
 			} catch (Exception e) {
-				System.out.println("Invalid, please try again. 6");
+				System.out.println("Invalid, please try again.");
 				return;
 			}
 		} else if (type == 'i') {
 
 			int cantWin = 0;
-
+			
+			try {
+				
 			if (m1.getSquareAt(y, x).getIsMined()) {
 				lose = true;
 
 				return;
 
 			}
-
+			
 			m1.inspect(y, x);
+			
+			} catch (Exception e) {
+				System.out.println("Invalid, please try again.");
+				return;
+			}
+			
 
 			for (Square[] t : m1.getBoard()) {
 
