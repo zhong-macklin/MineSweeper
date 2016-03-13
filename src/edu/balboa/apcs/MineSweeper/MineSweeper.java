@@ -112,7 +112,7 @@ public class MineSweeper {
 				// System.out.println("type =" + ch);
 			} else if (x == -1) {
 				if (ch < 'a' || ch >= 'z') {
-					System.out.println("Invalid, please try again.");
+					System.out.println("Invalid, please try again. 1");
 					return;
 				} else {
 					x = command.toLowerCase().charAt(i) - 'a';
@@ -120,22 +120,22 @@ public class MineSweeper {
 				}
 			} else if (y == -1) {
 				if (ch <= '0' || ch > '9') {
-					System.out.println("Invalid, please try again.");
+					System.out.println("Invalid, please try again. 2");
 					return;
 				} else {
 					y = Character.getNumericValue(ch);
 					// System.out.println("y =" + y);
 				}
 			} else if (y < 10 && y > -1) {
-				if (ch <= '0' || ch > '9') {
-					System.out.println("Invalid, please try again.");
+				if (ch < '0' || ch > '9') {
+					System.out.println("Invalid, please try again. 3");
 					return;
 				} else {
 					y = 10 * y + Character.getNumericValue(ch);
-					// System.out.println("y = " + y);
+					 System.out.println("y = " + y);
 				}
 			} else {
-				System.out.println("Invalid, please try again.");
+				System.out.println("Invalid, please try again. 4");
 				return;
 			}
 
@@ -149,7 +149,7 @@ public class MineSweeper {
 				curSquare.setIsFlagged(true);
 
 			} catch (Exception e) {
-				System.out.println("Invalid, please try again.");
+				System.out.println("Invalid, please try again. 5");
 				return;
 			}
 		} else if (type == 'u') {
@@ -157,7 +157,7 @@ public class MineSweeper {
 				Square curSquare = m1.getSquareAt(y, x);
 				curSquare.setIsFlagged(false);
 			} catch (Exception e) {
-				System.out.println("Invalid, please try again.");
+				System.out.println("Invalid, please try again. 6");
 				return;
 			}
 		} else if (type == 'i') {
