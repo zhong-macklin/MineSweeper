@@ -146,5 +146,6 @@ public class MineFieldTester {
 		} catch (Exception e) { // some failure occurred
 			t.fail(desc + " -- " + e);
 		}
+		//END TEST 8
 	}
 }
