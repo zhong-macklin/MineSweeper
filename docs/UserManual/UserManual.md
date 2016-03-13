@@ -3,7 +3,7 @@ User Manual for Team P's MineSweeper
 
 ## Getting the application
 1. Open terminal shell.
-2. Change directory to workspace3 ( cd ~/MOUNTED/apcs-locker/workspace3 )
+2. Change directory to where you want your project to be stored.
 3. Navigate the project's repository URL on github and copy the link
 4. On terminal shell, type in the command: "git clone URL". Replace URL with link copied in step 3. Hit enter.
 5. On eclipse, create a project and name it based on the repository that you copied.
