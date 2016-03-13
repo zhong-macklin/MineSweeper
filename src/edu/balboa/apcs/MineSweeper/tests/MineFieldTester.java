@@ -99,24 +99,24 @@ public class MineFieldTester {
 		// END TEST 6
 		
 
-		desc = "set 8 mines surrounding empty square. Inspect() should change the amount of near mines";
+		desc = "set 8 mines surrounding empty square. Inspect() should change the amount of near mines to 8";
 		try {
 			MineField test = new MineField(5);
 			for (int row = 0; row < 5; row++) {
 				for (int col = 0; col < 5; col++) {
-					test.getMineField()[row][col] = new Square();
-					test.getMineField()[0][0].setIsMined(true);
-					test.getMineField()[0][1].setIsMined(true);
-					test.getMineField()[0][2].setIsMined(true);
-					test.getMineField()[1][0].setIsMined(true);
-					test.getMineField()[1][2].setIsMined(true);
-					test.getMineField()[2][0].setIsMined(true);
-					test.getMineField()[2][1].setIsMined(true);
-					test.getMineField()[2][2].setIsMined(true);
+					test.getBoard()[row][col] = new Square();
+					test.getBoard()[0][0].setIsMined(true);
+					test.getBoard()[0][1].setIsMined(true);
+					test.getBoard()[0][2].setIsMined(true);
+					test.getBoard()[1][0].setIsMined(true);
+					test.getBoard()[1][2].setIsMined(true);
+					test.getBoard()[2][0].setIsMined(true);
+					test.getBoard()[2][1].setIsMined(true);
+					test.getBoard()[2][2].setIsMined(true);
 					test.inspect(1, 1);
 				}
 			}
-			if (test.getMineField()[1][1].getNearMines() == 8) {
+			if (test.getBoard()[1][1].getNearMines() == 8) {
 				t.pass(desc);
 			} else {
 				t.fail(desc);
@@ -126,19 +126,19 @@ public class MineFieldTester {
 		}
 		// END TEST 7
 	
-		desc = "set 3 mines surrounding empty square. Inspect() should change the amount of near mines";
+		desc = "set 2 mines surrounding empty square. Inspect() should change the amount of near mines to 2";
 		try {
 			MineField test = new MineField(2);
 			for (int row = 0; row < 2; row++) {
 				for (int col = 0; col < 2; col++) {
-					test.getMineField()[row][col] = new Square();
+					test.getBoard()[row][col] = new Square();
 
-					test.getMineField()[0][1].setIsMined(true);
-					test.getMineField()[1][0].setIsMined(true);
+					test.getBoard()[0][1].setIsMined(true);
+					test.getBoard()[1][0].setIsMined(true);
 					test.inspect(1, 1);
 				}
 			}
-			if (test.getMineField()[1][1].getNearMines() == 2) {
+			if (test.getBoard()[1][1].getNearMines() == 2) {
 				t.pass(desc);
 			} else {
 				t.fail(desc);
