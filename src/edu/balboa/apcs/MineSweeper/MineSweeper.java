@@ -65,7 +65,7 @@ public class MineSweeper {
 			Scanner keyboard2 = new Scanner(System.in);
 			String command = keyboard2.nextLine();
 			command.trim();
-			if (command.equals("q") || command.equals("Q") {
+			if (command.equals("q") || command.equals("Q")) {
 				return;
 			}
 			parseCommand(command);
