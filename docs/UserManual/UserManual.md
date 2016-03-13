@@ -23,6 +23,7 @@ The objectives of the game are to mark all mines with flags and flip all the squ
 The game is based on rows and columns, where rows are represented by numbers and columns are represented by letters. To interact with the game, the user must input a letter i(inspect), f(flag), u(unflag), q(quit). Letters i,f, and u must be followed by a set of coordinates in the format (letter,number). A sample command would be "i b5". This prompts the application to inspect the square that corresponds with the coordinate at column b, row 5.
 
 ### How to play
+
 As you inspect squares and uncover tiles, you will notice that numbers will be revealed. These numbers show the number of bombs that touch that square.
 ![alt text](images/minesweeper1.jpg)
 
