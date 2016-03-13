@@ -25,6 +25,7 @@ The game is based on rows and columns, where rows are represented by numbers and
 ### How to play
 
 As you inspect squares and uncover tiles, you will notice that numbers will be revealed. These numbers show the number of bombs that touch that square.
+
 ![alt text](images/minesweeper1.jpg)
 
 In this image, the red dots represent the potential mines that surround the circled square. Since you don't have enough information, you should not touch those four squares. Instead, you should work with those that you are certain with.
