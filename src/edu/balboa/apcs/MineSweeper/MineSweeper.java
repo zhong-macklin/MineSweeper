@@ -65,7 +65,7 @@ public class MineSweeper {
 			Scanner keyboard2 = new Scanner(System.in);
 			String command = keyboard2.nextLine();
 			command.trim();
-			if (command.equals("q")) {
+			if (command.equals("q") || command.equals("Q") {
 				return;
 			}
 			parseCommand(command);
@@ -104,7 +104,7 @@ public class MineSweeper {
 		y = -1;
 
 		for (int i = 0; i < command.length(); i++) {
-			char ch = command.charAt(i);
+			char ch = command.toLowerCase().charAt(i);
 			if (ch == ' ') {
 
 			} else if (type == '0') {
@@ -115,7 +115,7 @@ public class MineSweeper {
 					System.out.println("Invalid, please try again.");
 					return;
 				} else {
-					x = command.charAt(i) - 'a';
+					x = command.toLowerCase().charAt(i) - 'a';
 					// System.out.println("x =" + x);
 				}
 			} else if (y == -1) {
