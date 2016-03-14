@@ -1,11 +1,9 @@
 package edu.balboa.apcs.MineSweeper;
 
-//import MineSweeper;
-
 import java.util.Scanner;
 
 /**
- * Tcounts class is the driver for the APCS MineSweeper app.
+ * This class is the driver for the APCS MineSweeper app.
  * 
  * @author team X
  */
@@ -13,7 +11,6 @@ import java.util.Scanner;
 public class MineSweeper {
 
 	static MineField m1;
-	static int winCount;
 	char type;
 	int x;
 	int y;
