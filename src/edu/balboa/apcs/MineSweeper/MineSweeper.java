@@ -7,8 +7,6 @@ import java.util.Scanner;
 /**
  * This class is the controller for the APCS MineSweeper app.
  * 
- * @author vivian  team P
- * @author rassel  team P
  */
 
 public class MineSweeper {
@@ -60,7 +58,7 @@ public class MineSweeper {
 	 * flag, unflag or quit the game. This method checks what the user inputs and sees
 	 * if the player wins or loses.
 	 * 
-	 * @param m: MineField that we will call the commands on
+	 * @param m: <code>MineField</code> that we will call the commands on
 	 */
 	public void playGame(MineField m) {
 		win = false;
@@ -79,6 +77,7 @@ public class MineSweeper {
 			parseCommand(command);
 
 			if (win) {
+				MakeBoard.grid(m1);
 				System.out.println("You have won the game!");
 				s.addWins();
 				System.out.println(s.toString());
@@ -107,7 +106,7 @@ public class MineSweeper {
 	}
 
 	/**
-	 * This method takes in what the user inputs (its command) and deciphers it, 
+	 * This method takes in what the user inputs (its command, as a String) and deciphers it, 
 	 * then carries it out. 
 	 * 
 	 * @param command: the String that the user inputs
@@ -205,7 +204,7 @@ public class MineSweeper {
 
 	
 	/**
-	 * This is where the game calls upon the beginGame method and playGame method.
+	 * This is where the game calls upon the <code>beginGame()</code> method and <code>playGame()</code> method.
 	 * Asks the user if they would like to play again or quit.
 	 * 
 	 */
