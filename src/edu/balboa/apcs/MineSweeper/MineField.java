@@ -26,7 +26,6 @@ public class MineField {
 	// keeps track of the number of rows/columns that the current game board has
 	private int numberOfRows;
 
-	// constructor that sets board and randomly places mines in Squares
 	/**
 	 * Creates a MineField and randomly places mines in Squares.
 	 * @param numRows number of rows present in this <code>MineField</code>
