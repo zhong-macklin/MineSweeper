@@ -24,8 +24,8 @@ public class MineSweeperTester {
 	public static void main(String[] args) {
 		MineSweeperTester t = new MineSweeperTester();
 		
-		//SampleSquareTester included as an example -- modify as needed!
-		//SquareTester.runTests(t);
+
+		SquareTester.runTests(t);
 		MineFieldTester.runTests(t);
 
 	}
