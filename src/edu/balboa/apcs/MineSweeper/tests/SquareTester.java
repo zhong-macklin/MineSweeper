@@ -13,10 +13,8 @@ public class SquareTester {
 
 		String desc; //description of current test
 
-		///////////////////////////////////////////////////////////////////////
-		// TEST 1:  default square should not have a mine
-		///////////////////////////////////////////////////////////////////////
-		desc = "default square has no mine";
+
+		desc = "default square is not revealed";
 		try {
 			Square s1 = new Square();
 			if ( s1.getIsRevealed() == false ) {
@@ -102,7 +100,7 @@ public class SquareTester {
 		}
 		// END TEST 6
 		
-				desc = "hidden square should return a space";
+		desc = "hidden square should return a space";
 		try {
 			Square s1 = new Square();
 			s1.setIsRevealed(false);
@@ -131,7 +129,7 @@ public class SquareTester {
 		}
 		// END TEST 8
 
-		desc = "an unhidden square should return the number of surrounding mines";
+		desc = "a revealed square(not mined) should return the number of surrounding mines";
 		try {
 			Square s1 = new Square();
 			s1.setNearMines(5);
