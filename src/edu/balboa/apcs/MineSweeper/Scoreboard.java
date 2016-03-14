@@ -4,7 +4,6 @@ package edu.balboa.apcs.MineSweeper;
 /**
  * Represents a scoreboard that keeps track of the player's
  * wins and losses.
- * @author Vivian team P
  *
  */
 public class Scoreboard {
@@ -49,7 +48,7 @@ public class Scoreboard {
 	}
 	
 	/**
-	 * This toString method prints out the total number
+	 * This <code>toString()</code> method prints out the total number
 	 * of games won and the total number of games lost. 
 	 */
 	public String toString() {

@@ -5,7 +5,6 @@ package edu.balboa.apcs.MineSweeper;
  * the <code>Square</code> has been revealed,
  * if it has been flagged, if it has a mine, 
  * or just to check for any mines near it. 
- * @author Vivian
  *
  */
 

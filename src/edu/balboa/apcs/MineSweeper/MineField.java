@@ -3,11 +3,11 @@ package edu.balboa.apcs.MineSweeper;
 import java.util.Random;
 
 /**
- * Represents a MineField which
- * keeps track of the current game board, keeps track of the number of rows/columns
- * the current board has, and lastly holds a method with the percents of Squares
- * being mined. 
- * @author Vivian team P
+ * Represents a "game board." This class contains a constructor which creates a <code>MineField</code>
+ * with a 2D array of <code>Squares</code> and randomly mines a certain percent of them, and methods that
+ * keep track of the size of the array, as well as accessor methods that return the 2D array 
+ * and individual <code>Squares</code>.
+ * 
  *
  */
 
@@ -20,8 +20,8 @@ public class MineField {
 	private int numberOfRows;
 
 	/**
-	 * Creates a MineField and randomly places mines in Squares.
-	 * @param numRows number of rows present in this <code>MineField</code>
+	 * Creates a <code>MineField</code> and randomly places mines in <code>Squares</code>.
+	 * @param numRows number of rows we want the 2D array that will be created to have
 	 */
 	public MineField(int numRows) {
 
@@ -46,7 +46,7 @@ public class MineField {
 	}
 
 	/**
-	 * Returns the number of rows in game <code>Board</code>.
+	 * Returns the number of rows in the 2D array.
 	 * @return number of rows 
 	 */
 	public int getNumRows() {
@@ -55,15 +55,16 @@ public class MineField {
 
 	
 	/**
-	 * Returns the total number of Squares in game <code>Board</code>.
-	 * @return the total number of Squares in game <code>Board</code>.
+	 * Returns the total number of <code>Square</code>s in the 2D array.
+	 * @return the total number of <code>Square</code>s in the 2D array.
 	 */
 	public int getNumSquares() {
 		return numberOfRows * numberOfRows;
 	}
 
 	/**
-	 * Returns numberofRows multiplied by itself and multiplied by 16% in <code>Board</code>
+	 * Returns numberofRows multiplied by itself and multiplied by 16% 
+	 * (which is equal to the number of mined <code>Square</code>s in the 2D array)
 	 * @return total number of mined squares
 	 */
 	public int getNumMinedSquares() {
@@ -71,17 +72,17 @@ public class MineField {
 	}
 
 	/**
-	 * Returns the Square in the 2D array board at row y and column x
+	 * Returns the <code>Square</code> in the 2D array board at row y and column x
 	 * @param y the row in the array
 	 * @param x the column in the array
-	 * @return the square at y,x
+	 * @return the square at row y, column x in the 2D array
 	 */
 	public Square getSquareAt(int y, int x) {
 		return board[y][x];
 	}
 	
 	/**
-	 * Returns the 2D array holding the Squares (our current "game board").
+	 * Returns the 2D array holding the <code>Square</code>s (our current "game board").
 	 * @return the <code>Board</code>
 	 */
 	public Square[][] getBoard() {
@@ -90,12 +91,12 @@ public class MineField {
 
 
 	/**
-	 * This inspect method "reveals" the Square it is called on to 
+	 * This inspect method "reveals" the <code>Square</code> it is called on to 
 	 * show the number of mines in the squares adjacent to it, and if there
 	 * aren't any, calls inspect on all of the adjacent squares
 	 * 
-	 * @param y the Square's row
-	 * @param x the Square's column
+	 * @param y the <code>Square</code>'s row
+	 * @param x the <code>Square</code>'s column
 	 */
 	public void inspect(int y, int x) {
 		int numMines = 0;
