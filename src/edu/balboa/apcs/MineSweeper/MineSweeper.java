@@ -12,8 +12,6 @@ import java.util.Scanner;
 
 public class MineSweeper {
 
-	static Square[][] count; // keep in mind that we have (2) 2D arrays - count
-								// & board. we need to fix this.
 	static MineField m1;
 	static int winCount;
 	char type;
@@ -27,7 +25,7 @@ public class MineSweeper {
 	public void beginGame() {
 
 		for (int i = 0; i < 1;) {
-			System.out.println("Please choose a difficulty: b for beginner, i for intermediate, or a for advanced ");
+			System.out.println("Please choose a difficulty:\n(b for beginner, i for intermediate, or a for advanced)");
 			Scanner abc = new Scanner(System.in);
 			String n = abc.nextLine();
 			n = n.toLowerCase().trim();
@@ -62,7 +60,7 @@ public class MineSweeper {
 		for (int o = 0; o < 1;) {
 			
 			System.out.println(
-					"\nType in a command: i to inspect, f to flag, u to unflag, or q to quit this game, and then coordinates.\nExample: i b3");
+					"\nType in a command:\n(i to inspect, f to flag, u to unflag, or q to quit this game, and then coordinates)\nExample: i b3");
 			Scanner keyboard2 = new Scanner(System.in);
 			String command = keyboard2.nextLine();
 			command.trim();
@@ -114,7 +112,7 @@ public class MineSweeper {
 				// System.out.println("type =" + ch);
 			} else if (x == -1) {
 				if (ch < 'a' || ch >= 'z') {
-					System.out.println("Invalid, please try again. 1");
+					System.out.println("Invalid, please try again.");
 					return;
 				} else {
 					x = command.toLowerCase().charAt(i) - 'a';
@@ -122,7 +120,7 @@ public class MineSweeper {
 				}
 			} else if (y == -1) {
 				if (ch <= '0' || ch > '9') {
-					System.out.println("Invalid, please try again. 2");
+					System.out.println("Invalid, please try again.");
 					return;
 				} else {
 					y = Character.getNumericValue(ch);
@@ -130,14 +128,14 @@ public class MineSweeper {
 				}
 			} else if (y < 10 && y > -1) {
 				if (ch < '0' || ch > '9') {
-					System.out.println("Invalid, please try again. 3");
+					System.out.println("Invalid, please try again.");
 					return;
 				} else {
 					y = 10 * y + Character.getNumericValue(ch);
 					 System.out.println("y = " + y);
 				}
 			} else {
-				System.out.println("Invalid, please try again. 4");
+				System.out.println("Invalid, please try again.");
 				return;
 			}
 
@@ -151,7 +149,7 @@ public class MineSweeper {
 				curSquare.setIsFlagged(true);
 
 			} catch (Exception e) {
-				System.out.println("Invalid, please try again. 5");
+				System.out.println("Invalid, please try again.");
 				return;
 			}
 		} else if (type == 'u') {
@@ -159,7 +157,7 @@ public class MineSweeper {
 				Square curSquare = m1.getSquareAt(y, x);
 				curSquare.setIsFlagged(false);
 			} catch (Exception e) {
-				System.out.println("Invalid, please try again. 6");
+				System.out.println("Invalid, please try again.");
 				return;
 			}
 		} else if (type == 'i') {
@@ -210,7 +208,7 @@ public class MineSweeper {
 
 	public static void main(String[] args) {
 		MineSweeper s1 = new MineSweeper();
-		System.out.println("Welcome to APCS MineSweeper.");
+		System.out.println("Welcome to APCS MineSweeper.\n");
 		s1.beginGame();
 		// System.out.println("begin game done");
 		s1.playGame(m1);
@@ -228,7 +226,7 @@ public class MineSweeper {
 			} else {
 				System.out.println("Invalid command");
 			}
-			// uncomment if your team decides to ue the provided
+			// uncomment if your team decides to use the provided
 			// console-like UI class instead of running MineSweeper
 			// at the command line (in a terminal shell):
 			//
