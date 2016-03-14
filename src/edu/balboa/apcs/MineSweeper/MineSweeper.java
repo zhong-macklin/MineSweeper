@@ -212,7 +212,7 @@ public class MineSweeper {
 	 */
 	public static void main(String[] args) {
 		MineSweeper s1 = new MineSweeper();
-		System.out.println("Welcome to APCS MineSweeper.");
+		System.out.println("Welcome to APCS MineSweeper.\n");
 		s1.beginGame();
 		// System.out.println("begin game done");
 		s1.playGame(m1);
