@@ -28,7 +28,7 @@ public class MineField {
 
 	// constructor that sets board and randomly places mines in Squares
 	/**
-	 * Sets the board and randomly places mines in Squares.
+	 * Creates a MineField and randomly places mines in Squares.
 	 * @param numRows number of rows present in this <code>MineField</code>
 	 */
 	public MineField(int numRows) {
@@ -79,9 +79,9 @@ public class MineField {
 	}
 
 	/**
-	 * Returns the square the user points at in this <code>Board</code>
-	 * @param y row
-	 * @param x col
+	 * Returns the Square in the 2D array board at row y and column x
+	 * @param y the row in the array
+	 * @param x the column in the array
 	 * @return the square at y,x
 	 */
 	public Square getSquareAt(int y, int x) {
@@ -89,40 +89,21 @@ public class MineField {
 	}
 	
 	/**
-	 * Returns the entire board.
+	 * Returns the 2D array holding the Squares (our current "game board").
 	 * @return the <code>Board</code>
 	 */
 	public Square[][] getBoard() {
 		return board;
 	}
 
-	
-	/**
-	 * This method is to check whether the player has won or not.
-	 * @param board
-	 * @return 1 if the player wins. 
-	 */
-	public int Win(Square[][] board) {
-		int unMined = 0;
-		for (int row = 0; row < board.length; row++)
-			for (int col = 0; col < board[0].length; col++) {
-				if (board[row][col].getIsMined()) {
-					unMined++;
-				}
-			}
-		if (unMined == (int) (numberOfRows * numberOfRows * PERCENT_METHOD)) {
-			return 0;
-		}
-		return 1;
-
-	}
 
 	/**
-	 * This inspect method recursively checks to see whether a mine is found,
-	 * showing the number of adjaccent mines around the current square, and  
-	 * recording a win if there are no more unmined squares left.
-	 * @param y row
-	 * @param x col
+	 * This inspect method "reveals" the Square it is called on to 
+	 * show the number of mines in the squares adjacent to it, and if there
+	 * aren't any, calls inspect on all of the adjacent squares
+	 * 
+	 * @param y the Square's row
+	 * @param x the Square's column
 	 */
 	public void inspect(int y, int x) {
 		int numMines = 0;
