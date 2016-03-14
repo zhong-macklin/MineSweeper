@@ -6,7 +6,7 @@ This program lets us play the game MineSweeper. It is organized into an MVC mode
 
 ## Classes
 ### `MineSweeper`
-This class is our controller class. It has a `MakeBoard` and a `Scoreboard` for presenting the game to the user and a `MineField` for user interactions with the game board. It is responsible for taking in, interpreting, and carrying out user commands.
+This class is our controller class. It has a `Scoreboard` for keeping track of the number of games won/lost and a `MineField` for user interactions with the game board. It is responsible for taking in, interpreting, and carrying out user commands.
 
 ### `MineField`
 The `MineField` class has a 2D array of `Square`s. It has a constructor which randomly mines a certain number of `Square`s within that array and accessor methods for various field of the class. It also has methods that return a certain `Square` from within the array, and one that returns the array itself. It contains an `inspect()` method, which recursively checks for the number of mines adjacent to the current square.
