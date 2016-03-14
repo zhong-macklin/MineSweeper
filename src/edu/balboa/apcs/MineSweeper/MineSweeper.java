@@ -7,7 +7,8 @@ import java.util.Scanner;
 /**
  * This class is the controller for the APCS MineSweeper app.
  * 
- * @author rassel, vivian  team P
+ * @author vivian  team P
+ * @author rassel  team P
  */
 
 public class MineSweeper {
