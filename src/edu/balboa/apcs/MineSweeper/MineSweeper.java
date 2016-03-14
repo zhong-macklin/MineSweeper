@@ -27,7 +27,7 @@ public class MineSweeper {
 	public void beginGame() {
 
 		for (int i = 0; i < 1;) {
-			System.out.println("Please choose a difficulty:\n(b for beginner, i for intermediate, or a for advanced.)");
+			System.out.println("\nPlease choose a difficulty:\n(b for beginner, i for intermediate, or a for advanced.)");
 			Scanner abc = new Scanner(System.in);
 			String n = abc.nextLine();
 			n = n.toLowerCase().trim();
@@ -77,8 +77,20 @@ public class MineSweeper {
 			parseCommand(command);
 
 			if (win) {
+				
+				for (int i = 0; i < m1.getNumRows(); i++) {
+					for (int a = 0; a < m1.getNumRows(); a++) {
+						if (m1.getSquareAt(i, a).getIsMined()) {
+
+							m1.getSquareAt(i, a).setIsMined(true);
+							m1.getSquareAt(i, a).setIsRevealed(true);
+							m1.getSquareAt(i, a).toString();
+						}
+					}
+				}
+				
 				MakeBoard.grid(m1);
-				System.out.println("You have won the game!");
+				System.out.println("\nYou have won the game!");
 				s.addWins();
 				System.out.println(s.toString());
 				return;
@@ -95,7 +107,7 @@ public class MineSweeper {
 					}
 				}
 				MakeBoard.grid(m1);
-				System.out.println("You've lost.");
+				System.out.println("\nYou've lost.");
 				s.addLosses();
 				System.out.println(s.toString());
 				return;
@@ -199,6 +211,9 @@ public class MineSweeper {
 				win = true;
 				return;
 			}
+		} else {
+			System.out.println("Invalid, please try again.");
+			return;
 		}
 	}
 
@@ -210,7 +225,7 @@ public class MineSweeper {
 	 */
 	public static void main(String[] args) {
 		MineSweeper s1 = new MineSweeper();
-		System.out.println("Welcome to APCS MineSweeper.\n");
+		System.out.println("Welcome to APCS MineSweeper.");
 		s1.beginGame();
 		// System.out.println("begin game done");
 		s1.playGame(m1);
