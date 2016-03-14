@@ -154,7 +154,6 @@ public class MineSweeper {
 					return;
 				} else {
 					y = 10 * y + Character.getNumericValue(ch);
-					 System.out.println("y = " + y);
 				}
 			} else {
 				System.out.println("Invalid, please try again.");
