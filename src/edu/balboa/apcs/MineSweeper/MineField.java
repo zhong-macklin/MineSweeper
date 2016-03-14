@@ -3,7 +3,7 @@ package edu.balboa.apcs.MineSweeper;
 import java.util.Random;
 
 /**
- * Represents a MineField which counts the number of times a player has won or loss,
+ * Represents a MineField which
  * keeps track of the current game board, keeps track of the number of rows/columns
  * the current board has, and lastly holds a method with the percents of Squares
  * being mined. 
@@ -12,18 +12,11 @@ import java.util.Random;
  */
 
 public class MineField {
-	// keeps track of times won, increment anytime this happens.
-	private int Win;
-	// keeps track of times lose, increment anytime this happens.
-	private int Loss;
 
-	// keeps track of the current game board
 	private static Square[][] board;
 
-	// represents the percent of Squares being mined (16%)
 	private final static double PERCENT_METHOD = 0.16;
 
-	// keeps track of the number of rows/columns that the current game board has
 	private int numberOfRows;
 
 	/**
