@@ -57,9 +57,9 @@ public class MineSweeper {
 	public void playGame(MineField m) {
 		win = false;
 		lose = false;
-
+		MakeBoard.grid(m1);
+	
 		for (int o = 0; o < 1;) {
-			MakeBoard.grid(m1);
 			System.out.println(
 					"\nType in a command: i to inspect, f to flag, u to unflag, or q to quit this game, and then coordinates.\nExample: i b3");
 			Scanner keyboard2 = new Scanner(System.in);
@@ -69,8 +69,10 @@ public class MineSweeper {
 				return;
 			}
 			parseCommand(command);
+			MakeBoard.grid(m1);
 
 			if (win) {
+				
 				System.out.println("You have won the game!");
 				s.addWins();
 				System.out.println(s.toString());
