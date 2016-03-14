@@ -207,7 +207,7 @@ public class MineSweeper {
 	
 	/**
 	 * This is where the game calls upon the beginGame method and playGame method.
-	 * Asks the user if they would like to play again or quit after one game.
+	 * Asks the user if they would like to play again or quit.
 	 * 
 	 */
 	public static void main(String[] args) {
