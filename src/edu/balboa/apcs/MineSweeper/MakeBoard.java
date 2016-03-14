@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class MakeBoard {
 	
-	final static String alph = "abcdefghijklmnop";
+	private final static String alph = "abcdefghijklmnop";
 
 	
 	public static void grid(MineField m1) {

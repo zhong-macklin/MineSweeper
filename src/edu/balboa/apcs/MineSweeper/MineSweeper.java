@@ -10,14 +10,14 @@ import java.util.Scanner;
 
 public class MineSweeper {
 
-	static MineField m1;
-	char type;
-	int x;
-	int y;
-	static MakeBoard print;
-	static Scoreboard s = new Scoreboard();
-	static boolean win = false;
-	static boolean lose = false;
+	private static MineField m1;
+	private char type;
+	private int x;
+	private int y;
+	private static MakeBoard print;
+	private static Scoreboard s = new Scoreboard();
+	private static boolean win = false;
+	private static boolean lose = false;
 
 	public void beginGame() {
 
