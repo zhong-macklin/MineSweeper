@@ -2,6 +2,15 @@ package edu.balboa.apcs.MineSweeper;
 
 import java.util.Random;
 
+/**
+ * Represents a MineField which counts the number of times a player has won or loss,
+ * keeps track of the current game board, keeps track of the number of rows/columns
+ * the current board has, and lastly holds a method with the percents of Squares
+ * being mined. 
+ * @author Vivian team P
+ *
+ */
+
 public class MineField {
 	// keeps track of times won, increment anytime this happens.
 	private int Win;
@@ -18,6 +27,10 @@ public class MineField {
 	private int numberOfRows;
 
 	// constructor that sets board and randomly places mines in Squares
+	/**
+	 * Sets the board and randomly places mines in Squares.
+	 * @param numRows number of rows present in this <code>MineField</code>
+	 */
 	public MineField(int numRows) {
 
 		numberOfRows = numRows;
@@ -40,28 +53,55 @@ public class MineField {
 		}
 	}
 
-	// accessor method for numberOfRows
+	/**
+	 * Returns the number of rows in game <code>Board</code>.
+	 * @return number of rows 
+	 */
 	public int getNumRows() {
 		return numberOfRows;
 	}
 
-	// returns the total number of Squares in game board
+	
+	/**
+	 * Returns the total number of Squares in game <code>Board</code>.
+	 * @return the total number of Squares in game <code>Board</code>.
+	 */
 	public int getNumSquares() {
 		return numberOfRows * numberOfRows;
 	}
 
+	/**
+	 * Returns numberofRows multiplied by itself and multiplied by 16% in <code>Board</code>
+	 * @return total number of mined squares
+	 */
 	public int getNumMinedSquares() {
 		return (int) (numberOfRows * numberOfRows * PERCENT_METHOD);
 	}
 
+	/**
+	 * Returns the square the user points at in this <code>Board</code>
+	 * @param y row
+	 * @param x col
+	 * @return the square at y,x
+	 */
 	public Square getSquareAt(int y, int x) {
 		return board[y][x];
 	}
 	
+	/**
+	 * Returns the entire board.
+	 * @return the <code>Board</code>
+	 */
 	public Square[][] getBoard() {
 		return board;
 	}
-	//We will run this method to check if we've won
+
+	
+	/**
+	 * This method is to check whether the player has won or not.
+	 * @param board
+	 * @return 1 if the player wins. 
+	 */
 	public int Win(Square[][] board) {
 		int unMined = 0;
 		for (int row = 0; row < board.length; row++)
@@ -77,7 +117,13 @@ public class MineField {
 
 	}
 
-	// inspect method
+	/**
+	 * This inspect method recursively checks to see whether a mine is found,
+	 * showing the number of adjaccent mines around the current square, and  
+	 * recording a win if there are no more unmined squares left.
+	 * @param y row
+	 * @param x col
+	 */
 	public void inspect(int y, int x) {
 		int numMines = 0;
 

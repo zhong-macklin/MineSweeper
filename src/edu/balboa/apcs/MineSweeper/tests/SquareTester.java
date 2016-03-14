@@ -101,6 +101,65 @@ public class SquareTester {
 			t.fail(desc + " -- " + e);
 		}
 		// END TEST 6
+		
+				desc = "hidden square should return a space";
+		try {
+			Square s1 = new Square();
+			s1.setIsRevealed(false);
+			if ( s1.toString().equals(" ") ) {
+				t.pass( desc );
+			} else {	
+				t.fail( desc );
+			}
+		} catch ( Exception e ) { //some failure occurred
+			t.fail(desc + " -- " + e);
+		}
+		// END TEST 7
+		
+		
+		desc = "flagged square should return F";
+		try {
+			Square s1 = new Square();
+			s1.setIsFlagged(true);
+			if ( s1.toString().equals("F") ) {
+				t.pass( desc );
+			} else {	
+				t.fail( desc );
+			}
+		} catch ( Exception e ) { //some failure occurred
+			t.fail(desc + " -- " + e);
+		}
+		// END TEST 8
+
+		desc = "an unhidden square should return the number of surrounding mines";
+		try {
+			Square s1 = new Square();
+			s1.setNearMines(5);
+			s1.setIsRevealed(true);
+			if ( s1.toString().equals("5") ) {
+				t.pass( desc );
+			} else {	
+				t.fail( desc );
+			}
+		} catch ( Exception e ) { //some failure occurred
+			t.fail(desc + " -- " + e);
+		}
+		//END TEST 9
+		
+		desc = "a revealed mined square should return *";
+		try {
+			Square s1 = new Square();
+			s1.setIsMined(true);
+			s1.setIsRevealed(true);
+			if ( s1.toString().equals("*") ) {
+				t.pass( desc );
+			} else {	
+				t.fail( desc );
+			}
+		} catch ( Exception e ) { //some failure occurred
+			t.fail(desc + " -- " + e);
+		}
+		//END TEST 10
 	}
 
 }
