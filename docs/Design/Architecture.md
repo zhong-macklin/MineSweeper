@@ -11,11 +11,11 @@ This class is our controller class. It has a MakeBoard and a Scoreboard for pres
 ### `MineField`
 The MineField class has a 2D array of Squares. It has a constructor which randomly mines a certain number of Squares within that array and accessor methods for various field of the class. It also has methods that return a certain square from within the array, and one that returns the array itself. It contains an inspect method, which recursively checks for the number of mines adjacent to the current square.
 
-### 'Square'
+### `Square`
 The Square class keeps track of whether or not that Square is flagged or mined and how many mines there are in the Squares adjacent to it. It contains accessor and mutator methods for its fields, and a toString method that returns a String representation of the Square.
 
-### 'MakeBoard'
+### `MakeBoard`
 The MakeBoard class is our view class, which prints out a visual interpretation of the current state of the game board.
 
-### 'Scoreboard'
+### `Scoreboard`
 The Scoreboard class keeps track of how many games the user has won or lost while the program has been running.
